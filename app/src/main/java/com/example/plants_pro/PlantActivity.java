@@ -23,6 +23,7 @@ import androidx.annotation.Nullable;
 
 import com.bumptech.glide.Glide;
 
+import java.io.ByteArrayOutputStream;
 import java.sql.Array;
 import java.util.ArrayList;
 
@@ -65,12 +66,14 @@ public class PlantActivity extends Activity{
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                //String plantN = (String)adapterView.getItemAtPosition(position);
-                //Bitmap bitmap = (Bitmap)adapterView.getItemAtPosition(position);
 
                 Intent info = new Intent(PlantActivity.this,ContentActivity.class);
-                //info.putExtra("name",plantN);
-
+                info.putExtra("name",list.get(position).getName());
+                Bitmap bitmap = list.get(position).getBitmap();
+                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                bitmap.compress(Bitmap.CompressFormat.PNG,100,stream);
+                byte[] byteArray = stream.toByteArray();
+                info.putExtra("image",byteArray);
                 startActivity(info);
             }
         });

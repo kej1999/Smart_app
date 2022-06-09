@@ -23,15 +23,29 @@
             android:textStyle="bold" />
 
 
-        <TextView
-            android:id="@+id/pltTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="200px"
+        <LinearLayout
             android:layout_marginTop="80px"
-            android:fontFamily="monospace"
-            android:text="의 상태창"
-            android:textSize="55px" />
+            android:layout_marginBottom="40px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/pltTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="210px"
+                android:textStyle="bold"
+                android:fontFamily="monospace"
+                android:text="장미"
+                android:textSize="55px" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif"
+                android:text="의 상태창"
+                android:textSize="53px" />
+        </LinearLayout>
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/pltPic"
